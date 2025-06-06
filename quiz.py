@@ -31,10 +31,11 @@ def poser_question(question):
 
 def lancer_questionnaire(questionnaire):
     score = 0
-    for i in questionnaire:
+    for i, question in enumerate(questionnaire):  
+        print(f"Question {i+1}/{len(questionnaire)}")
         print("score:", score)
-        if poser_question(i):
-            score+=1
+        if poser_question(question):
+            score += 1
     print("Score final : " + str(score) + "/" + str(len(questionnaire)))
 
 questionnaire = [
